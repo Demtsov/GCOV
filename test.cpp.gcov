@@ -1,0 +1,34 @@
+        -:    0:Source:test.cpp
+        -:    0:Graph:test.gcno
+        -:    0:Data:-
+        -:    0:Runs:0
+        -:    0:Programs:0
+        -:    1:#include <iostream>
+        -:    2:
+        -:    3:// Функция, которую будем тестировать
+    #####:    4:int divide(int a, int b) {
+    #####:    5:    if (b == 0) {
+    #####:    6:        throw "Division by zero";
+        -:    7:    }
+    #####:    8:    return a / b;
+        -:    9:}
+        -:   10:
+        -:   11:// Простая функция для демонстрации покрытия кода
+    #####:   12:int add(int a, int b) {
+    #####:   13:    return a + b;
+        -:   14:}
+        -:   15:
+    #####:   16:int main() {
+        -:   17:    // Примеры использования функций
+    #####:   18:    std::cout << "Result of division: " << divide(10, 2) << std::endl;
+    #####:   19:    std::cout << "Result of addition: " << add(5, 7) << std::endl;
+        -:   20:
+        -:   21:    try {
+        -:   22:        // Вызов функции с делением на ноль для демонстрации исключения
+    #####:   23:        std::cout << "Result of division: " << divide(8, 0) << std::endl;
+    =====:   24:    } catch (const char* msg) {
+    =====:   25:        std::cerr << "Exception caught: " << msg << std::endl;
+        -:   26:    }
+        -:   27:
+    #####:   28:    return 0;
+    #####:   29:}
